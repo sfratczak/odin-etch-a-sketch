@@ -6,9 +6,27 @@
 
 body {
     height: 100vh;
-    background-color: lightskyblue;
+    background-color: #495579;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.content * {
-    background-color: #fff;
+.content {
+    height: 480px;
+    width: 480px;
+    box-shadow: 15px 15px #263159;
+    display: flex;
+    flex-wrap: wrap;
+    flex: none;
+}
+
+.box {
+    background-color: #FFFBEB;
+    height: 30px;
+    width: 30px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #263159;
+    flex: 0 0 auto;
 }
