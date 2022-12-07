@@ -2,14 +2,29 @@
     border: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #263159;
 }
 
 body {
     height: 100vh;
     background-color: #495579;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 30px;
+}
+
+.generate-button {
+    padding: 10px 30px;
+    background-color: #FFFBEB;
+    box-shadow: 5px 5px #263159;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #263159;
 }
 
 .content {
