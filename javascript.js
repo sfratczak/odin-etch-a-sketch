@@ -5,6 +5,11 @@ for (let rows = 0; rows < 16; rows++) {
     const box = document.createElement("div");
     box.classList.add("box");
 
+    box.addEventListener(
+      "mouseover",
+      () => (box.style.backgroundColor = "black")
+    );
+
     content.appendChild(box);
   }
 }
