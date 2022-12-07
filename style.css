@@ -28,8 +28,6 @@ body {
 }
 
 .content {
-    height: 480px;
-    width: 480px;
     box-shadow: 15px 15px #263159;
     display: flex;
     flex-wrap: wrap;
@@ -38,10 +36,8 @@ body {
 
 .box {
     background-color: #FFFBEB;
-    height: 30px;
-    width: 30px;
     border-style: solid;
     border-width: 1px;
-    border-color: #263159;
+    border-color: #e9e6d7;
     flex: 0 0 auto;
 }
