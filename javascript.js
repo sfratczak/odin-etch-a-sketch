@@ -37,42 +37,33 @@ generateButton.addEventListener("click", () => {
 normalModeToggle.addEventListener("change", () => {
   if (normalModeToggle.checked) {
     isNormalModeOn = true;
+    isUnicornModeOn = false;
+    isWatercolorModeOn = false;
 
     cleanUpContent();
     generateNewGrid(currentGridSize);
-  } else {
-    isNormalModeOn = false;
-
-    // cleanUpContent();
-    // generateNewGrid(currentGridSize);
   }
 });
 
 unicornModeToggle.addEventListener("change", () => {
   if (unicornModeToggle.checked) {
+    isNormalModeOn = false;
     isUnicornModeOn = true;
+    isWatercolorModeOn = false;
 
     cleanUpContent();
     generateNewGrid(currentGridSize);
-  } else {
-    isUnicornModeOn = false;
-
-    // cleanUpContent();
-    // generateNewGrid(currentGridSize);
   }
 });
 
 watercolorModeToggle.addEventListener("change", () => {
   if (watercolorModeToggle.checked) {
+    isNormalModeOn = false;
+    isUnicornModeOn = false;
     isWatercolorModeOn = true;
 
     cleanUpContent();
     generateNewGrid(currentGridSize);
-  } else {
-    isWatercolorModeOn = false;
-
-    // cleanUpContent();
-    // generateNewGrid(currentGridSize);
   }
 });
 
