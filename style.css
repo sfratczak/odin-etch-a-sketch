@@ -29,6 +29,7 @@ body {
 }
 
 .content {
+    background-color: #FFFBEB;
     box-shadow: 15px 15px #263159;
     display: flex;
     flex-wrap: wrap;

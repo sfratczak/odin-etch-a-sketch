@@ -6,6 +6,7 @@ const unicornModeToggle = document.querySelector(".unicorn-mode-toggle");
 
 let currentGridSize = 16;
 let isUnicornModeOn = false;
+let isWatercolorModeOn = false;
 
 content.style.height = `${CONTENT_SIZE_IN_PX}px`;
 content.style.width = `${CONTENT_SIZE_IN_PX}px`;
@@ -52,11 +53,17 @@ function generateNewGrid(size) {
     box.classList.add("box");
     box.style.height = `${boxSize}px`;
     box.style.width = `${boxSize}px`;
+    box.style.opacity = 0;
 
     box.addEventListener("mouseover", () => {
       if (isUnicornModeOn) {
+        box.style.opacity = 1;
         box.style.backgroundColor = generateRandomRGB();
+      } else if (isWatercolorModeOn) {
+        box.style.opacity = +box.style.opacity + 0.1;
+        box.style.backgroundColor = "black";
       } else {
+        box.style.opacity = 1;
         box.style.backgroundColor = "black";
       }
     });
