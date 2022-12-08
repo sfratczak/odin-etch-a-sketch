@@ -2,9 +2,12 @@ const CONTENT_SIZE_IN_PX = 500;
 
 const content = document.querySelector(".content");
 const generateButton = document.querySelector(".generate-button");
+const normalModeToggle = document.querySelector(".normal-mode-toggle");
 const unicornModeToggle = document.querySelector(".unicorn-mode-toggle");
+const watercolorModeToggle = document.querySelector(".watercolor-mode-toggle");
 
 let currentGridSize = 16;
+let isNormalModeOn = true;
 let isUnicornModeOn = false;
 let isWatercolorModeOn = false;
 
@@ -31,6 +34,20 @@ generateButton.addEventListener("click", () => {
   generateNewGrid(currentGridSize);
 });
 
+normalModeToggle.addEventListener("change", () => {
+  if (normalModeToggle.checked) {
+    isNormalModeOn = true;
+
+    cleanUpContent();
+    generateNewGrid(currentGridSize);
+  } else {
+    isNormalModeOn = false;
+
+    // cleanUpContent();
+    // generateNewGrid(currentGridSize);
+  }
+});
+
 unicornModeToggle.addEventListener("change", () => {
   if (unicornModeToggle.checked) {
     isUnicornModeOn = true;
@@ -40,8 +57,22 @@ unicornModeToggle.addEventListener("change", () => {
   } else {
     isUnicornModeOn = false;
 
+    // cleanUpContent();
+    // generateNewGrid(currentGridSize);
+  }
+});
+
+watercolorModeToggle.addEventListener("change", () => {
+  if (watercolorModeToggle.checked) {
+    isWatercolorModeOn = true;
+
     cleanUpContent();
     generateNewGrid(currentGridSize);
+  } else {
+    isWatercolorModeOn = false;
+
+    // cleanUpContent();
+    // generateNewGrid(currentGridSize);
   }
 });
 
