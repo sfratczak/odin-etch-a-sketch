@@ -33,8 +33,14 @@ generateButton.addEventListener("click", () => {
 unicornModeToggle.addEventListener("change", () => {
   if (unicornModeToggle.checked) {
     isUnicornModeOn = true;
+
+    cleanUpContent();
+    generateNewGrid(currentGridSize);
   } else {
     isUnicornModeOn = false;
+
+    cleanUpContent();
+    generateNewGrid(currentGridSize);
   }
 });
 
@@ -47,10 +53,13 @@ function generateNewGrid(size) {
     box.style.height = `${boxSize}px`;
     box.style.width = `${boxSize}px`;
 
-    box.addEventListener(
-      "mouseover",
-      () => (box.style.backgroundColor = generateRandomRGB())
-    );
+    box.addEventListener("mouseover", () => {
+      if (isUnicornModeOn) {
+        box.style.backgroundColor = generateRandomRGB();
+      } else {
+        box.style.backgroundColor = "black";
+      }
+    });
 
     content.appendChild(box);
   }
