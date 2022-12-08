@@ -34,7 +34,7 @@ function generateNewGrid(size) {
 
     box.addEventListener(
       "mouseover",
-      () => (box.style.backgroundColor = "black")
+      () => (box.style.backgroundColor = generateRandomRGB())
     );
 
     content.appendChild(box);
@@ -45,4 +45,18 @@ function cleanUpContent() {
   while (content.lastChild) {
     content.removeChild(content.lastChild);
   }
+}
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function generateRandomRGB() {
+  const r = getRandomInt(0, 255);
+  const g = getRandomInt(0, 255);
+  const b = getRandomInt(0, 255);
+
+  return `rgb(${r}, ${g}, ${b})`;
 }
