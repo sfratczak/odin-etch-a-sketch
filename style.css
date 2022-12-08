@@ -18,7 +18,8 @@ body {
     gap: 30px;
 }
 
-.generate-button {
+.generate-button,
+.toggles {
     padding: 10px 30px;
     background-color: #FFFBEB;
     box-shadow: 5px 5px #263159;
@@ -40,4 +41,11 @@ body {
     border-width: 1px;
     border-color: #e9e6d7;
     flex: 0 0 auto;
+}
+
+.toggles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }

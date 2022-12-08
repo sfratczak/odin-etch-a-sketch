@@ -1,11 +1,16 @@
+const CONTENT_SIZE_IN_PX = 500;
+
 const content = document.querySelector(".content");
 const generateButton = document.querySelector(".generate-button");
+const unicornModeToggle = document.querySelector(".unicorn-mode-toggle");
 
-const CONTENT_SIZE_IN_PX = 500;
+let currentGridSize = 16;
+let isUnicornModeOn = false;
+
 content.style.height = `${CONTENT_SIZE_IN_PX}px`;
 content.style.width = `${CONTENT_SIZE_IN_PX}px`;
 
-generateNewGrid(16);
+generateNewGrid(currentGridSize);
 
 generateButton.addEventListener("click", () => {
   const gridSize = prompt(
@@ -19,8 +24,18 @@ generateButton.addEventListener("click", () => {
     return;
   }
 
+  currentGridSize = Math.floor(+gridSize);
+
   cleanUpContent();
-  generateNewGrid(Math.floor(+gridSize));
+  generateNewGrid(currentGridSize);
+});
+
+unicornModeToggle.addEventListener("change", () => {
+  if (unicornModeToggle.checked) {
+    isUnicornModeOn = true;
+  } else {
+    isUnicornModeOn = false;
+  }
 });
 
 function generateNewGrid(size) {
